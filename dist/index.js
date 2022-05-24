@@ -55,6 +55,7 @@ const VueHtmlToPaper = {
       }
       
       const url = '';
+      const imgurl = window.document.getElementsByTagName("canvas")[0].toDataURL("image/jpg");
       const win = openWindow(url, name, specs);
 
       win.document.write(`
@@ -67,6 +68,7 @@ const VueHtmlToPaper = {
           </body>
         </html>
       `);
+      win.document.write("<img src='" + imgurl + "'/>");
 
       addStyles(win, styles);
       win.onafterprint = (event) => {
