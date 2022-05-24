@@ -64,11 +64,11 @@ const VueHtmlToPaper = {
           </body>
         </html>
       `);
-      win.document.write("<img src='" + imgurl + "'/>");
+     // win.document.write("<img src='" + imgurl + "'/>");
 
       addStyles(win, styles);
       win.onafterprint = (event) => {
-        console.log('After print');
+        //console.log('After print');
         win.close();
       }
       setTimeout(() => {

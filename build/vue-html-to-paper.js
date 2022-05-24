@@ -57,7 +57,7 @@
         }
         
         const url = '';
-        const imgurl = window.document.getElementsByTagName("canvas")[0].toDataURL("image/jpeg",1.0);
+        window.document.getElementsByTagName("canvas")[0].toDataURL("image/jpeg",1.0);
         const win = openWindow(url, name, specs);
 
         win.document.write(`
@@ -70,11 +70,11 @@
           </body>
         </html>
       `);
-        win.document.write("<img src='" + imgurl + "'/>");
+       // win.document.write("<img src='" + imgurl + "'/>");
 
         addStyles(win, styles);
         win.onafterprint = (event) => {
-          console.log('After print');
+          //console.log('After print');
           win.close();
         };
         setTimeout(() => {
