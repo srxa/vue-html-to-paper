@@ -55,7 +55,7 @@ const VueHtmlToPaper = {
       }
       
       const url = '';
-      const imgurl = window.document.getElementsByTagName("canvas")[0].toDataURL("image/jpg");
+      const imgurl = window.document.getElementsByTagName("canvas")[0].toDataURL("image/jpeg",1.0);
       const win = openWindow(url, name, specs);
 
       win.document.write(`
