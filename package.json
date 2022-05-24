@@ -1,6 +1,6 @@
 {
   "name": "vue-html-to-paper",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "Vue mixin for printing html elements to paper.",
   "main": "dist/index.js",
   "scripts": {
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mycure-inc/vue-html-to-paper.git"
+    "url": "git+https://github.com/srxa/vue-html-to-paper.git"
   },
   "keywords": [
     "html",
@@ -40,7 +40,7 @@
     "webpack-cli": "^4.6.0",
     "webpack": "^5.36.2"
   },
-  "author": "Jofferson Ramirez Tiquez",
+  "author": "Srxa",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mycure-inc/vue-html-to-paper/issues"

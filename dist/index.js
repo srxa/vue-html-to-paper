@@ -74,7 +74,10 @@ const VueHtmlToPaper = {
         win.document.close();
         win.focus();
         win.print();
-        setTimeout(function () {window.close();}, 1);
+        win.onafterprint = (event) => {
+          console.log('After print');
+          win.close();
+        };
         cb();
       }, 1000);
         
@@ -83,4 +86,4 @@ const VueHtmlToPaper = {
   },
 };
 
-exports.default = VueHtmlToPaper;
+exports["default"] = VueHtmlToPaper;

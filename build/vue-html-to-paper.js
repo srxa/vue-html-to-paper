@@ -2,7 +2,7 @@
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.VueHtmlToPaper = factory());
-}(this, (function () { 'use strict';
+})(this, (function () { 'use strict';
 
   function addStyles (win, styles) {
     styles.forEach(style => {
@@ -76,7 +76,10 @@
           win.document.close();
           win.focus();
           win.print();
-          setTimeout(function () {window.close();}, 1);
+          win.onafterprint = (event) => {
+            console.log('After print');
+            win.close();
+          };
           cb();
         }, 1000);
           
@@ -87,4 +90,4 @@
 
   return VueHtmlToPaper;
 
-})));
+}));
