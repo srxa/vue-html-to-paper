@@ -72,9 +72,6 @@ const VueHtmlToPaper = {
         win.print();
         cb();
       }, 1000);
-      win.addEventListener('afterprint', (event) => {
-        win.close();
-      });
       return true;
     };
   },
