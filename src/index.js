@@ -10,10 +10,6 @@ function addStyles (win, styles) {
 
 function openWindow (url, name, props) {
   let windowRef = null;
-  if (/*@cc_on!@*/false) { // for IE only
-    windowRef = window.open('', name, props);
-    windowRef.close();
-  }
   windowRef = window.open(url, name, props);
   if (!windowRef.opener) {
     windowRef.opener = self;
@@ -74,7 +70,10 @@ const VueHtmlToPaper = {
         win.document.close();
         win.focus();
         win.print();
-        setTimeout(function () {window.close();}, 1);
+        win.onafterprint = (event) => {
+          console.log('After print');
+          win.close();
+        }
         cb();
       }, 1000);
         
