@@ -71,15 +71,14 @@
       `);
 
         addStyles(win, styles);
-        
+        win.onafterprint = (event) => {
+          console.log('After print');
+          win.close();
+        };
         setTimeout(() => {
           win.document.close();
           win.focus();
           win.print();
-          win.onafterprint = (event) => {
-            console.log('After print');
-            win.close();
-          };
           cb();
         }, 1000);
           
